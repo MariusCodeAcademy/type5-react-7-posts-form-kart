@@ -8,13 +8,16 @@ import initPosts from './data/posts';
 
 function App() {
   // console.log('initPosts ===', initPosts);
+  function newPostHandler(newPostObj) {
+    console.log('newPostHandler in App.js', newPostObj);
+  }
   return (
     <div className='App'>
       <Header />
       <h1>App</h1>
       <main className='content'>
         <PostList items={initPosts} />
-        <FormList />
+        <FormList onNewPost={newPostHandler} />
       </main>
     </div>
   );

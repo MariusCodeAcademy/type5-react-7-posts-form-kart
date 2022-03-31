@@ -1,9 +1,9 @@
 import NewPostForm from './NewPostForm';
 
-export default function FormList() {
+export default function FormList(props) {
   return (
     <div>
-      <NewPostForm />
+      <NewPostForm onNewPost={props.onNewPost} />
     </div>
   );
 }
