@@ -12,8 +12,10 @@ function App() {
     <div className='App'>
       <Header />
       <h1>App</h1>
-      <PostList items={initPosts} />
-      <FormList />
+      <main className='content'>
+        <PostList items={initPosts} />
+        <FormList />
+      </main>
     </div>
   );
 }
