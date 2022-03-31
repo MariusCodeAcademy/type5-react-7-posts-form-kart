@@ -18,3 +18,5 @@ const posts = [
     body: 'This is body of Post 3',
   },
 ];
+
+export default posts;
