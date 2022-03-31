@@ -17,6 +17,12 @@ const posts = [
     author: 'Jane',
     body: 'This is body of Post 3',
   },
+  {
+    id: 4,
+    title: 'Post 4',
+    author: 'Mike',
+    body: 'This is body of Post 4',
+  },
 ];
 
 export default posts;
