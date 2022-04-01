@@ -24,6 +24,10 @@ h1,h3,h4,h5,h6,p {
   padding: 15px;
   box-shadow: 4px 5px 15px lightblue;
 }
+.dark-mode-item {
+  background-color: #333;
+  color: white;
+}
 
 .icon {
   cursor: pointer;

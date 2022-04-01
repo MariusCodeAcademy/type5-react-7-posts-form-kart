@@ -4,6 +4,11 @@ export default function PostList(props) {
   console.log(props.items);
   // generuoti  <PostItem /> is props.items ir paduoti jiems title, body, author
   // <PostItem /> turi tilpti 3 i viena eilute ir buti su css graziai apipavidalinti(border, shadow, pading ir pan)
+
+  if (props.items.length === 0) {
+    return <h2>There are no posts, please create some</h2>;
+  }
+
   return (
     <div className='post-list'>
       {props.items.map((pObj) => (
