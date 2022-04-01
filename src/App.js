@@ -10,10 +10,18 @@ import { useState } from 'react';
 function App() {
   const [postsArr, setPostsArr] = useState(initPosts);
 
+  function onDeleteHandler(idOfPostToDelete) {
+    console.log('onDeleteHandler ran in App.js', idOfPostToDelete);
+    // const afterDelete = postsArr.filter((postObj) => postObj.id !== idOfPostToDelete);
+    // console.log('afterDelete ===', afterDelete);
+    setPostsArr((prevState) => {
+      return prevState.filter((postObj) => postObj.id !== idOfPostToDelete);
+    });
+  }
+
   function newPostHandler(newPostObj) {
     console.log('newPostHandler in App.js', newPostObj);
-    // prideti id propertie prie newPostObj
-    // id: Math.random()
+
     newPostObj.id = Math.random();
     // nustatyti postsArr su setPostsArr() paduodant esama postsArr + newPostObj
     // array.concat(newobj), array.slice() ...arrray
@@ -26,7 +34,7 @@ function App() {
       <Header />
       <h1>Posts App</h1>
       <main className='content'>
-        <PostList items={postsArr} />
+        <PostList items={postsArr} onDelete={onDeleteHandler} />
         <FormList onNewPost={newPostHandler} />
       </main>
     </div>

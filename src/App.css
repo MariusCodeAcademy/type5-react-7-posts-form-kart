@@ -1,4 +1,5 @@
 @import url("https://cdn.jsdelivr.net/npm/water.css@2/out/water.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css");
 
 h1,h3,h4,h5,h6,p {
   margin-top: 0;
@@ -22,4 +23,10 @@ h1,h3,h4,h5,h6,p {
   border-radius: 7px;
   padding: 15px;
   box-shadow: 4px 5px 15px lightblue;
+}
+
+.icon {
+  cursor: pointer;
+  padding: 5px;
+  font-size: 18px;
 }
