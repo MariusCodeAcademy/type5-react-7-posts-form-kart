@@ -12,8 +12,6 @@ function App() {
 
   function onDeleteHandler(idOfPostToDelete) {
     console.log('onDeleteHandler ran in App.js', idOfPostToDelete);
-    // const afterDelete = postsArr.filter((postObj) => postObj.id !== idOfPostToDelete);
-    // console.log('afterDelete ===', afterDelete);
     setPostsArr((prevState) => {
       return prevState.filter((postObj) => postObj.id !== idOfPostToDelete);
     });

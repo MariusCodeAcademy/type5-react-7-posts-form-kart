@@ -1,9 +1,23 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function NewPostForm(props) {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [body, setBody] = useState('');
+  const [formValid, setFormValid] = useState(false);
+
+  const tLen = title.length;
+  const aLen = author.length;
+  const bLen = body.length;
+
+  useEffect(() => {
+    // console.log('useEffect ran NewPostForm', title.length, author.length, body.length);
+    if (tLen && aLen && bLen) {
+      setFormValid(true);
+    } else {
+      setFormValid(false);
+    }
+  }, [tLen, aLen, bLen]);
 
   function submitHandler(event) {
     event.preventDefault();
@@ -13,6 +27,7 @@ export default function NewPostForm(props) {
       body: body,
     };
     // console.log('newPostObj ===', newPostObj);
+
     props.onNewPost(newPostObj);
   }
 
@@ -38,7 +53,9 @@ export default function NewPostForm(props) {
           type='text'
           placeholder='Body'
         />
-        <button type='submit'>Create</button>
+        <button disabled={!formValid} type='submit'>
+          {formValid ? 'Create' : 'Fill Form inputs'}
+        </button>
       </form>
     </div>
   );
